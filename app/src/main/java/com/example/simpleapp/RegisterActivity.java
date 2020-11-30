@@ -1,6 +1,7 @@
 package com.example.simpleapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,7 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class RegisterActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,16 @@ public class RegisterActivity extends AppCompatActivity {
             String email = ((EditText) findViewById(R.id.emailRegister)).getText().toString();
             String password = ((EditText) findViewById(R.id.passwordRegister)).getText().toString();
             String confPassword = ((EditText) findViewById(R.id.confPasswordRegister)).getText().toString();
-            Toast.makeText(context, "Not Connect to Firebase Yet. But the email is: " + email + " and the password is: " + password,Toast.LENGTH_SHORT).show();
+
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterActivity.this, task -> {
+                if (!task.isSuccessful()){
+                    Toast.makeText(context, "Register Failed",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Register Success",Toast.LENGTH_SHORT).show();
+                    Intent home = new Intent(RegisterActivity.this, HomeActivity.class);
+                    startActivity(home);
+                }
+            });
         });
     }
 }

@@ -8,4 +8,6 @@
     <string name="full_name">Full Name</string>
     <string name="don_t_have_an_account_register_here">Don\'t have an account? Register Here!</string>
     <string name="have_an_account_login_here">Have an account? Login here</string>
+    <string name="you_are_login">You are Login!</string>
+    <string name="logout">Logout</string>
 </resources>
