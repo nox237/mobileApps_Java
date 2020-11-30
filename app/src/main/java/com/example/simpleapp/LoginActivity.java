@@ -1,9 +1,11 @@
 package com.example.simpleapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,14 +28,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button register = findViewById(R.id.buttonRegister);
+        Button login = findViewById(R.id.buttonLogin);
+        TextView register = findViewById(R.id.registerLink);
 
         register.setOnClickListener(v -> {
+            Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+            LoginActivity.this.startActivity(i);
+        });
+
+        login.setOnClickListener(v -> {
             Context context = getApplicationContext();
-            String name = ((EditText) findViewById(R.id.nameRegister)).getText().toString();
-            String email = ((EditText) findViewById(R.id.emailRegister)).getText().toString();
-            String password = ((EditText) findViewById(R.id.passwordRegister)).getText().toString();
-            String confirmationPassword = ((EditText) findViewById(R.id.confPasswordRegister)).getText().toString();
+            String email = ((EditText) findViewById(R.id.emailLogin)).getText().toString();
+            String password = ((EditText) findViewById(R.id.passwordLogin)).getText().toString();
             Toast.makeText(context, "Not Connect to Firebase Yet. But the email is: " + email + " and the password is: " + password,Toast.LENGTH_SHORT).show();
         });
     }

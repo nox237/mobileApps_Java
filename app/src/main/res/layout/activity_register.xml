@@ -41,14 +41,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/confirm_password"
         android:importantForAutofill="no"
+        android:inputType="textPassword"
         android:padding="15sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintTop_toBottomOf="@+id/appName"
-        app:layout_constraintVertical_bias="0.848"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintVertical_bias="0.786"
+        tools:layout_editor_absoluteX="50dp"
         android:layout_marginLeft="50sp"
-        android:layout_marginRight="50sp"
-        android:inputType="textPassword" />
+        android:layout_marginRight="50sp"/>
 
     <EditText
         android:id="@+id/passwordRegister"
@@ -56,14 +56,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:importantForAutofill="no"
+        android:inputType="textPassword"
         android:padding="15sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
         app:layout_constraintTop_toBottomOf="@+id/appName"
-        app:layout_constraintVertical_bias="0.607"
-        tools:layout_editor_absoluteX="0dp"
+        app:layout_constraintVertical_bias="0.58"
+        tools:layout_editor_absoluteX="49dp"
         android:layout_marginLeft="50sp"
-        android:layout_marginRight="50sp"
-        android:inputType="textPassword" />
+        android:layout_marginRight="50sp"/>
 
     <EditText
         android:id="@+id/emailRegister"
@@ -80,6 +80,18 @@
         android:layout_marginLeft="50sp"
         android:layout_marginRight="50sp"/>
 
+    <TextView
+        android:id="@+id/loginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_an_account_login_here"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appName"
+        app:layout_constraintVertical_bias="0.938" />
+
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
@@ -89,6 +101,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appName"
-        app:layout_constraintVertical_bias="0.78" />
+        app:layout_constraintVertical_bias="0.874" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
