@@ -10,4 +10,8 @@
     <string name="have_an_account_login_here">Have an account? Login here</string>
     <string name="you_are_login">You are Login!</string>
     <string name="logout">Logout</string>
+    <string name="add_new_event">Add New Event</string>
+    <string name="event_name">Event Name</string>
+    <string name="event_description">Event Description</string>
+    <string name="submit">Submit</string>
 </resources>
