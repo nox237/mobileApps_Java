@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.simpleapp.HomeActivity;
 import com.example.simpleapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -43,6 +45,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             intent.putExtra("event_description",list_event_name.get(holder.getAdapterPosition()).getDescription());
 
             v.getContext().startActivity(intent);
+        });
+
+        holder.delete_button.setOnClickListener(v -> {
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            rootRef.child("event").child(list_event_name.get(holder.getAdapterPosition()).getId()).getRef().removeValue();
         });
 
         return holder;
