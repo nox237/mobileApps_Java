@@ -37,12 +37,19 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         View view = inflater.inflate(R.layout.item_event, parent, false);
         EventViewHolder holder = new EventViewHolder(view);
 
+        holder.name.setOnClickListener(v ->{
+            Intent intent = new Intent(v.getContext(), DetailsActivity.class);
+            intent.putExtra("image_url", list_event_name.get(holder.getAdapterPosition()).getImage());
+            v.getContext().startActivity(intent);
+        });
+
         holder.update_button.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EventUpdateActivity.class);
 
             intent.putExtra("event_id", list_event_name.get(holder.getAdapterPosition()).getId());
             intent.putExtra("event_name", list_event_name.get(holder.getAdapterPosition()).getName());
             intent.putExtra("event_description",list_event_name.get(holder.getAdapterPosition()).getDescription());
+            intent.putExtra("event_image", list_event_name.get(holder.getAdapterPosition()).getImage());
 
             v.getContext().startActivity(intent);
         });

@@ -5,15 +5,25 @@ public class EventData {
     private String id;
     private String name;
     private String description;
+    private String image;
 
     public EventData(){
 
     }
 
-    public EventData(String id, String name, String description) {
+    public EventData(String id, String name, String description, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.image = image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getId() {

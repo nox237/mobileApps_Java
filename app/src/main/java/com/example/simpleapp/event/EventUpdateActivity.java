@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EventUpdateActivity extends AppCompatActivity {
 
-    EditText event_name, event_description;
+    EditText event_name, event_description, event_image;
     Button update_button;
     DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -26,10 +26,12 @@ public class EventUpdateActivity extends AppCompatActivity {
         Intent intent = getIntent();
         event_name = findViewById(R.id.update_event_name);
         event_description = findViewById(R.id.update_event_description);
+        event_image = findViewById(R.id.update_image_url);
         update_button = findViewById(R.id.update_event_button);
 
         event_name.setText(intent.getStringExtra("event_name"));
         event_description.setText(intent.getStringExtra("event_description"));
+        event_image.setText(intent.getStringExtra("event_image"));
 
         update_button.setOnClickListener(v -> {
             rootRef.child("event").child(intent.getStringExtra("event_id")).child("name").setValue(event_name.getText().toString());

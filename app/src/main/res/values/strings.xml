@@ -17,4 +17,5 @@
     <string name="edit_data">Edit Data</string>
     <string name="update_button">Update</string>
     <string name="update_event">Update Event</string>
+    <string name="image_url">Image URL</string>
 </resources>

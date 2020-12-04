@@ -43,6 +43,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/update_event_name" />
 
+    <EditText
+        android:id="@+id/update_image_url"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="50sp"
+        android:hint="@string/image_url"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_event_description" />
+
     <Button
         android:id="@+id/update_event_button"
         android:layout_width="wrap_content"

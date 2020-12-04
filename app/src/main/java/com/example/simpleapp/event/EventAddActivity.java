@@ -22,18 +22,16 @@ public class EventAddActivity extends AppCompatActivity {
 
         Button submit_button = findViewById(R.id.update_event_button);
 
-        submit_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String title = ((EditText) findViewById(R.id.update_event_name)).getText().toString();
-                String description = ((EditText) findViewById(R.id.update_event_description)).getText().toString();
-                uploadData(title, description);
-            }
+        submit_button.setOnClickListener(v -> {
+            String title = ((EditText) findViewById(R.id.update_event_name)).getText().toString();
+            String description = ((EditText) findViewById(R.id.update_event_description)).getText().toString();
+            String image = ((EditText) findViewById(R.id.add_image_url)).getText().toString();
+            uploadData(title, description, image);
         });
     }
 
-    private void uploadData(String title, String description){
+    private void uploadData(String title, String description, String image){
         DatabaseReference eventRef = database.getReference("event").push();
-        eventRef.setValue(new EventData(eventRef.getKey(), title, description));
+        eventRef.setValue(new EventData(eventRef.getKey(), title, description, image));
     }
 }
