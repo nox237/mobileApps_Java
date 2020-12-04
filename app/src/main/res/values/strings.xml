@@ -15,4 +15,6 @@
     <string name="event_description">Event Description</string>
     <string name="submit">Submit</string>
     <string name="edit_data">Edit Data</string>
+    <string name="update_button">Update</string>
+    <string name="update_event">Update Event</string>
 </resources>

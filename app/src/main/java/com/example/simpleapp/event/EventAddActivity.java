@@ -20,13 +20,13 @@ public class EventAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_add);
 
-        Button submit_button = findViewById(R.id.upload_event_button);
+        Button submit_button = findViewById(R.id.update_event_button);
 
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = ((EditText) findViewById(R.id.add_event_name)).getText().toString();
-                String description = ((EditText) findViewById(R.id.add_event_description)).getText().toString();
+                String title = ((EditText) findViewById(R.id.update_event_name)).getText().toString();
+                String description = ((EditText) findViewById(R.id.update_event_description)).getText().toString();
                 uploadData(title, description);
             }
         });
