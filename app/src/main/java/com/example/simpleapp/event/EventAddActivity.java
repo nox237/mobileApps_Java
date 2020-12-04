@@ -11,10 +11,6 @@ import com.example.simpleapp.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 public class EventAddActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -38,6 +34,6 @@ public class EventAddActivity extends AppCompatActivity {
 
     private void uploadData(String title, String description){
         DatabaseReference eventRef = database.getReference("event").push();
-        eventRef.setValue(new Event(title, description));
+        eventRef.setValue(new EventData(eventRef.getKey(), title, description));
     }
 }

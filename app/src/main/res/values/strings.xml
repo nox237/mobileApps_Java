@@ -14,4 +14,5 @@
     <string name="event_name">Event Name</string>
     <string name="event_description">Event Description</string>
     <string name="submit">Submit</string>
+    <string name="edit_data">Edit Data</string>
 </resources>
